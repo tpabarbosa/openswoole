@@ -1,0 +1,5 @@
+/src
+/.dev
+/.vscode
+/Dockerfile
+/vendor

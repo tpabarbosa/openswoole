@@ -5,3 +5,7 @@ header {
     text-align: center;
     display: flex;
 }
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Veículos</title>
+</head>
+<body>
+    <header>
+        <div><p>Fullstack</p></div>
+        <div><input id='busca' name='busca' placeholder="BUSCA" type="text" /></div>
+    </header>
+    <main>
+        <section>Veículos <button>+</button></section>
+        <div>
+            <section id="car-list">Lista</section>
+            <section id="car-description">Detalhes
+
+                <div class="container-info"  class="hidden">Detalhes
+                    <div class="container-desc">
+                        <div class="name-car" id="veiculo">Nome do veículo</div>
+                        <ul>
+                            <li class="list1">Marca</li>
+                            <li class="list2" id="marca">FIAT</li>
+                        </ul>
+                        <ul>
+                            <li class="list3">Ano</li>
+                            <li class="list4" id="ano">2016</li>
+                        </ul>
+                        <p class="desc" id="descricao">
+                            O Chevrolet Corsa Hatch Maxx 1.4 (Flex) é um carro compacto da marca americana Chevrolet, projetado para oferecer praticidade, economia e conforto aos seus proprietários. Este modelo possui um motor 1.4 de 4 cilindros flex, o que significa que pode funcionar tanto com gasolina quanto com etanol, oferecendo uma boa potência e economia de combustível. A transmissão manual de 5 velocidades permite uma condução envolvente e suave.
+                            Outras características incluem ar-condicionado, direção hidráulica, vidros elétricos, sistema de som com conectividade Bluetooth e câmera de ré. Com 5 portas, o Corsa Hatch Maxx 1.4 (Flex) é ideal para pequenas famílias ou para aqueles que procuram um carro compacto e prático para o dia a dia. Além disso, o seu design atraente e moderno torna o carro um veículo atraente e atualizado.
+                            O interior é espaçoso e confortável, oferecendo amplo espaço para os ocupantes e bagagem. O sistema de segurança inclui airbags, freios ABS e controle de estabilidade, garantindo a segurança dos ocupantes em situações de emergência. Em resumo, o Chevrolet Corsa Hatch Maxx 1.4 (Flex) é um carro compacto, eficiente e confortável que atende às necessidades dos consumidores modernos.
+                        </p>
+                        <div class="edit-tag">
+                                <button class="edit"><i id="pen" class="bi bi-pencil-fill"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                                </svg></i>        Editar</button>
+                                <i id="tag2" class="bi bi-tag-fill">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                    </svg>
+                                </i>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            </section>
+        </div>
+    </main>
+    <div id="modal"></div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

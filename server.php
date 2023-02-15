@@ -26,6 +26,8 @@ $router->post('/veiculos', [VeiculosController::class, 'create']);
 
 $router->get('/veiculos/find', [VeiculosController::class, 'find']);
 
+$router->put('/veiculos/update', [VeiculosController::class, 'update']);
+
 $server->on('start', function (Server $server) use ($hostname, $port) {
     echo sprintf('Swoole server is started at http://%s:%s' . PHP_EOL, $hostname, $port);
 });

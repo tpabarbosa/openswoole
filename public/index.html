@@ -1,60 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
     <title>Veículos</title>
 </head>
 <body>
     <header>
-        <div><p>Fullstack</p></div>
-        <div><input id='busca' name='busca' placeholder="BUSCA" type="text" /></div>
+        <div>
+            <p class="full"> <i class="bi bi-droplet"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-droplet" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+                <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z"/>
+              </svg></i> Fullstack</p>
+        </div>
+        <div>
+            <input id='busca' name='busca' placeholder="BUSCA" type="text" /> <button class="busca"><i id="lupa" class="bi bi-search"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg></i></button>
+        </div>
     </header>
     <main>
-        <section>Veículos <button>+</button></section>
-        <div>
-            <section id="car-list">Lista</section>
-            <section id="car-description">Detalhes
 
-                <div class="container-info"  class="hidden">Detalhes
-                    <div class="container-desc">
-                        <div class="name-car" id="veiculo">Nome do veículo</div>
-                        <ul>
-                            <li class="list1">Marca</li>
-                            <li class="list2" id="marca">FIAT</li>
-                        </ul>
-                        <ul>
-                            <li class="list3">Ano</li>
-                            <li class="list4" id="ano">2016</li>
-                        </ul>
-                        <p class="desc" id="descricao">
-                            O Chevrolet Corsa Hatch Maxx 1.4 (Flex) é um carro compacto da marca americana Chevrolet, projetado para oferecer praticidade, economia e conforto aos seus proprietários. Este modelo possui um motor 1.4 de 4 cilindros flex, o que significa que pode funcionar tanto com gasolina quanto com etanol, oferecendo uma boa potência e economia de combustível. A transmissão manual de 5 velocidades permite uma condução envolvente e suave.
-                            Outras características incluem ar-condicionado, direção hidráulica, vidros elétricos, sistema de som com conectividade Bluetooth e câmera de ré. Com 5 portas, o Corsa Hatch Maxx 1.4 (Flex) é ideal para pequenas famílias ou para aqueles que procuram um carro compacto e prático para o dia a dia. Além disso, o seu design atraente e moderno torna o carro um veículo atraente e atualizado.
-                            O interior é espaçoso e confortável, oferecendo amplo espaço para os ocupantes e bagagem. O sistema de segurança inclui airbags, freios ABS e controle de estabilidade, garantindo a segurança dos ocupantes em situações de emergência. Em resumo, o Chevrolet Corsa Hatch Maxx 1.4 (Flex) é um carro compacto, eficiente e confortável que atende às necessidades dos consumidores modernos.
-                        </p>
-                        <div class="edit-tag">
-                                <button class="edit"><i id="pen" class="bi bi-pencil-fill"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-                                </svg></i>        Editar</button>
-                                <i id="tag2" class="bi bi-tag-fill">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
-                                    <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                                    </svg>
-                                </i>
-                            </div>
+        <section  class="container-section">Veículo
+            <button class="add-car" type="button" class="btn btn-primary" data-toggle="modal" data-target="#janelaModal">+</button>
+        </section>
+        <div class="list-car">
+            <div class="container-info">Lista de Veículos
+                <div class="container-list" id="car-list">
+                    <div class="container-info-car">
+                        <p class="name-brand">FIAT</p>
+                        <p class="name-car">Palio G5 1.0 Flex</p>
+                        <p class="year-car">2016</p>
+                        <i class="tag" class="bi bi-tag-fill">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                            <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                            </svg>
+                        </i>
+                    </div>
+                    <div class="container-info-car">
+                        <p id="name-brand">FIAT</p>
+                        <p id="name-car">Palio G5 1.0 Flex</p>
+                        <p id="year-car">2016</p>
+                        <i id="tag" class="bi bi-tag-fill">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                            <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                            </svg>
+                        </i>
                     </div>
                 </div>
             </div>
 
-            </section>
+            <div class="container-info"  >Detalhes
+            <div id="car-description" class="hidden">
+                <div class="container-desc">
+                    <div class="name-car" id="veiculo"></div>
+                    <div class="marca-ano">
+                        <ul>
+                            <li >Marca</li>
+                            <li class="marca"  id="marca"></li>
+                        </ul>
+                        <ul>
+                            <li >Ano</li>
+                            <li class="marca" id="ano"></li>
+                        </ul>
+                    </div>
+                    <p class="desc" id="descricao">
+
+                    </p>
+                    <div class="edit-tag">
+                            <button class="edit"><i id="pen" class="bi bi-pencil-fill"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                            </svg></i>        Editar</button>
+                            <i id="tag2" class="bi bi-tag-fill">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                                <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                </svg>
+                            </i>
+                        </div>
+                </div>
+            </div>
+            </div>
         </div>
     </main>
-    <div id="modal"></div>
+    <div class="modal fade" id="janelaModal">
 
-    <script src="index.js"></script>
+        <div class="modal-dialog modal-body modal-lg">
+
+                <div class="modal-content">
+
+                    <div class="modalHeader">
+
+                        <h3 class="modal-title">Novo Veículo</h3>
+
+                    </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <form class="col s12">
+                                  <div class="row">
+                                    <div class="input-field col s6">
+                                        <p> Veículo</p>
+                                      <input id="add_veiculo"  placeholder="Veículo" type="text" class="input-style validate">
+
+                                    </div>
+                                    <div class="input-field col s6">
+                                      <input id="add_marca" type="text" class="input-style validate" placeholder="Marca">
+                                    </div>
+                                  </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                      <input  id="add_ano" type="text" class="input-style validate"
+                                      placeholder="Ano">
+                                    </div>
+                                    <label class="switch input-field col s6">
+                                        <input id="add_vendido" type="checkbox">
+                                        <span class="slider round"></span>
+                                        <div class="check-style">Vendido</div>
+                                      </label>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                      <textarea  id="add_desc" type="text" class="input-style validate"
+                                      placeholder="Descrição" rows="10" cols="85%"></textarea>
+
+                                    </div>
+                                </div>
+
+
+                                </div>
+
+                        <div class="modal-footer">
+                                <button type="button" id="add" class="btn btn-secondary" data-bs-dismiss="modal" >ADD</button>
+                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#janelaModal" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                </div>
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="index.js"></script>
 </body>
-
 </html>

@@ -1,6 +1,37 @@
 const carList = document.getElementById("car-list");
 let cars = [];
 
+const createCar = document.getElementById("add");
+
+createCar.addEventListener('click', () => {
+    const marca = document.getElementById('add_marca').value;
+    const veiculo = document.getElementById('add_veiculo').value;
+    const ano = document.getElementById('add_ano').value;
+    const descricao = document.getElementById('add_desc').value;
+    const vendido = document.getElementById('add_vendido').value;
+
+    const car = {
+        marca,
+        veiculo,
+        ano,
+        descricao,
+        vendido: vendido === 'on' ? true : false
+    }
+
+    fetch('http://localhost:9501/veiculos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(car)
+    }).then(resp => {
+        if (resp.ok) {
+            getAll();
+        }
+    })
+})
+
+
 const search = document.getElementById('busca');
 
 search.addEventListener('keyup', (e) => {
@@ -10,14 +41,13 @@ search.addEventListener('keyup', (e) => {
         descricaoContainer.classList.add('hidden')
         find(query);
     }
-
 })
 
 const addCarInfo = (data) => {
     carList.innerHTML = '';
     data.forEach(car => {
         const infoCar = document.createElement('div');
-        infoCar.classList.add('containe-info-car');
+        infoCar.classList.add('container-info-car');
         infoCar.dataset.id = car.id;
         infoCar.innerHTML = `
                 <p class="name-brand">${car.marca}</p>
@@ -52,7 +82,9 @@ const addCarInfo = (data) => {
 
 const getAll = async () => {
     const resp = await fetch('http://localhost:9501/veiculos');
+    console.log(resp);
     const data = await resp.json();
+    console.log(data);
     cars = data;
     addCarInfo(data);
 }

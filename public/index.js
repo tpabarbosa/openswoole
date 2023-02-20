@@ -18,7 +18,7 @@ createCar.addEventListener('click', () => {
         vendido: vendido === 'on' ? true : false
     }
 
-    fetch('http://localhost:9501/veiculos', {
+    fetch('http://127.0.0.1:9501/veiculos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ const addCarInfo = (data) => {
 
 
 const getAll = async () => {
-    const resp = await fetch('http://localhost:9501/veiculos');
+    const resp = await fetch('http://127.0.0.1:9501/veiculos');
     console.log(resp);
     const data = await resp.json();
     console.log(data);
@@ -90,7 +90,7 @@ const getAll = async () => {
 }
 
 const find = async (query) => {
-    const resp = await fetch(`http://localhost:9501/veiculos/find?q=${query}`);
+    const resp = await fetch(`http://127.0.0.1:9501/veiculos/find?q=${query}`);
     if (!resp.ok) {
         cars = [];
     } else {

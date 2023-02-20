@@ -18,7 +18,7 @@ class VeiculosModel
             $stmt = $this->dbConnection->prepare('SELECT * FROM veiculos');
             $stmt->execute();
             $data = $stmt->fetchAll(\PDO::FETCH_OBJ);
-
+            var_dump('MODEL: ', $data);
             return $data;
         } catch (\PDOException $e) {
             echo $e->getMessage();

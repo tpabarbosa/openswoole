@@ -19,7 +19,9 @@ class VeiculosController
     {
         $response->header('Content-Type', 'application/json');
         $response->status(200);
-        $response->end(json_encode($this->model->getAll()));
+        $json = json_encode($this->model->getAll());
+        var_dump(json_last_error());
+        $response->end($json);
         return;
     }
 
